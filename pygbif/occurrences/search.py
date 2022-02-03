@@ -48,6 +48,7 @@ def search(
     facet=None,
     facetMincount=None,
     facetMultiselect=None,
+    timeout=60,
     **kwargs
 ):
     """
@@ -348,7 +349,7 @@ def search(
         # requests package options
         ## There's an acceptable set of requests options (['timeout', 'cookies', 'auth',
         ## 'allow_redirects', 'proxies', 'verify', 'stream', 'cert']) you can pass
-        ## in via **kwargs, e.g., set a timeout
+        ## in via **kwargs, e.g., set a timeout. Default timeout set to 60 seconds.
         x = occurrences.search(timeout = 1)
     """
     url = gbif_baseurl + "occurrence/search"
